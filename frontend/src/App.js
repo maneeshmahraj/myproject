@@ -7,6 +7,7 @@ import Content from './Content';
 import Footer from './Footer';
 import Registration from './Registration';
 import Login from './Login';
+import Forgetpassword from './Forgetpassword';
 const App = () => {
   return (
    <>
@@ -19,6 +20,7 @@ const App = () => {
         <Route path='content' element={<Content/>}/>
         <Route path='registration' element={<Registration/>}/>
         <Route path='login' element={<Login/>}/>
+        <Route path='forgetpassword' element={<Forgetpassword/>}/>
     </Route>
    </Routes>
    </BrowserRouter>

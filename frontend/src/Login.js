@@ -24,8 +24,8 @@ const Login = () => {
           <button>login</button>
         </div>
         <div className='login-items1'>
-          <span>don`t have an Account:<Link to="regitration">Sign Up</Link></span>
-          <span>forgate password:<Link to="regitration">reset-password</Link></span>
+          <span>don`t have an Account:<Link to="regitration" style={{textDecoration:"underline"}}>Sign Up</Link></span>
+          <span>forgate password:<Link to="forgetpassword" style={{textDecoration:"underline"}}>Click here</Link></span>
 
         </div>
        </form>
