@@ -8,6 +8,8 @@ import Footer from './Footer';
 import Registration from './Registration';
 import Login from './Login';
 import Forgetpassword from './Forgetpassword';
+import PasswordReset from './PasswordReset';
+import SignUp from './SignUp';
 const App = () => {
   return (
    <>
@@ -20,7 +22,9 @@ const App = () => {
         <Route path='content' element={<Content/>}/>
         <Route path='registration' element={<Registration/>}/>
         <Route path='login' element={<Login/>}/>
-        <Route path='forgetpassword' element={<Forgetpassword/>}/>
+        <Route path='passwordreset' element={<Forgetpassword/>}/>
+        <Route path='forgetpassword/:id/:token' element={<PasswordReset/>}/>
+        <Route path='signup' element={<SignUp/>}/>
     </Route>
    </Routes>
    </BrowserRouter>
