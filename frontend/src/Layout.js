@@ -65,9 +65,10 @@ const Layout = () => {
         </div>
         <div className='nav-layout'>
             <ul>
-                <li onMouseOver={handleMouseOver} >BEDROOM</li>
-                 <li onMouseOver={handleMouseOver2}>LIVING</li>
-                  <li><Link to="registration" className='lik'>REGISTRATION</Link></li>
+                
+                <li onMouseOver={handleMouseOver}><Link to="home"  className='lik'>BEDROOM</Link></li>
+                 <li onMouseOver={handleMouseOver2}>LIVING ROOM</li>
+                 <li onMouseOver={handleMouseOver2}>MORE CATEGORIES</li>
                   <li><Link to="login" className='lik'>LOGIN</Link></li>
 
             </ul>
