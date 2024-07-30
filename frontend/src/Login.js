@@ -1,9 +1,13 @@
+import axios from 'axios';
 import React, { useState } from 'react'
 import { Link, Outlet } from 'react-router-dom';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
 
   const [input,setInput]=useState({})
+const [massge,setMassge]=useState(false)
+
   const handleInput=(e)=>{
       let name=e.target.name;
       let value=e.target.value;
@@ -11,6 +15,41 @@ const Login = () => {
   }
   const handleSubmit=(e)=>{
     e.preventDefault();
+    let api="http://localhost:8000/api/user/login";
+    axios.post(api,input).then((res)=>{
+       localStorage.setItem("token",res.data.token)
+       localStorage.setItem("username",res.data.username)
+       localStorage.setItem("email",res.data.email)
+    
+       if(res.data.massage=="you are login.."){
+        toast.success(res.data.massage, {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+         
+          
+          });
+          setMassge(true)
+       }
+       else{
+        toast.error("password does not exist", {
+          position: "top-center",
+          autoClose: 5000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+         
+          
+          });
+       }
+
+    })
   }
   
   return (
@@ -20,16 +59,16 @@ const Login = () => {
        <form onSubmit={handleSubmit}>
         <div className='login-heading'>
           <h1>Welcome Back,Login</h1>
-          <p>Hi,we are glad you are back,please login</p>
+         {massge? <p style={{color:"green"}}>welcome you are login successfully</p>: <p>Hi,we are glad you are back,please login</p>}
         </div>
         <div className='login-items'>
-          <label>Email</label>
+          <label for="email">Email</label>
           <input type='email' name='email' 
           placeholder='Enter your email address'
           value={input.email} onChange={handleInput} />
         </div>
         <div className='login-items'>
-        <label>Password</label>
+        <label for="password">Password</label>
 
           <input type='password' name='password'
           placeholder='Enter your password'
@@ -45,6 +84,7 @@ const Login = () => {
         </div>
        </form>
        </div>
+       <ToastContainer />
     <Outlet/>
     </>
   )
