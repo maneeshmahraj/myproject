@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { ToastContainer, toast } from 'react-toastify';
-
+import axios from 'axios';
+import { useNavigate} from 'react-router-dom'
 const Forgetpassword = () => {
 
     const [email,setEmail]=useState("");
+    const navigate=useNavigate();
         const [massage,setMassage]=useState(false)
     const setVal=(e)=>{
         let value=e.target.value;
@@ -11,21 +13,20 @@ const Forgetpassword = () => {
     }
     const sendLink=async(e)=>{
         e.preventDefault();
-       let res= await fetch("/sendpasswordlink",{
-        method:"POST",
-        headers:{
-            "Content-Type":"application/json"
-        },
-        body:JSON.stringify({email})
+       let api="http://localhost:8000/api/user/email";
+       axios.post(api,{email:email}).then((res)=>{
+        if(res.data){
+          setEmail("");
+          setMassage(true)
+          toast(res.data)
+          navigate("/forgetpassword/:id/:token")
+         }
+         else{
+          toast.error("invelid user")
+         }
        })
-       const data =await res.json();
-       if(data.status==201){
-        setEmail("");
-        setMassage(true)
-       }
-       else{
-        toast.error("invelid user")
-       }
+     
+     
     }
   return (
     <>

@@ -2,8 +2,17 @@
 const regModel=require("../models/registrationmodel")
 const bcrypt=require("bcryptjs");
 const jwt=require("jsonwebtoken");
+const nodemailer=require("nodemailer")
 const secret_key="mk112"
 
+
+const transporter=nodemailer.createTransport({
+              service:"gmail",
+              auth:{
+                user:"mb124969@gmail.com",
+                pass:"xsov uljt hh5v t2gx hhzx cm4m o25a 6flm"
+              }
+})
 const regData=async(req,res)=>{
     try { 
         const {name,mobile,email,password}=req.body;
@@ -48,10 +57,49 @@ const logData=async(req,res)=>{
     }
 }
 
+const passwordReset=async(req,res)=>{
+      const {email}=req.body;
+      console.log(email);
+      if(!email){
+        res.json("enter your email")
+      }
+      try {
+        const user=await regModel.findOne({email});
+        if(user){
+          const token=await jwt.sign({userId:user._id,email:user.email},secret_key,
+            {expiresIn:"420s"}
+          )
+        const setusertoken=await regModel.findByIdAndUpdate({_id:user._id},{varifytoken:token},{new:true})
+        if(setusertoken){
+            const mailOptions={
+                from:"mb124969@gmail.com",
+                to:email,
+                subject:"sending email for password reset",
+                text:`this link valid only 4 minutes http://localhost:3000/forgetpassword/${user._id}/${setusertoken.varifytoken}`
+            }
+            transporter.sendMail(mailOptions,(error,info)=>{
+                if(error){
+                    res.json("email not send !!")
+                }
+                else{
+                    console.log("email sent",info.response)
+                    res.json("email send !!")
 
+                }
+            })
+        }
+        
+        }
+
+      } catch (error) {
+        console.error("invalid ",error)
+        
+      }
+}
 
 
 module.exports={
     regData,
-    logData
+    logData,
+    passwordReset
 }

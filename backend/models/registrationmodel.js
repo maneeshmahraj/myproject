@@ -16,6 +16,9 @@ const resgSchema=new mongoose.Schema({
     password:{
         type:String,
         required:true
+    },
+    varifytoken:{
+        type:String
     }
 })
 module.exports=mongoose.model("resgistration",resgSchema)

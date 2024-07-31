@@ -10,6 +10,7 @@ import Login from './Login';
 import Forgetpassword from './Forgetpassword';
 import PasswordReset from './PasswordReset';
 import SignUp from './SignUp';
+import Admin from './Admin';
 const App = () => {
   return (
    <>
@@ -25,6 +26,7 @@ const App = () => {
         <Route path='passwordreset' element={<Forgetpassword/>}/>
         <Route path='forgetpassword/:id/:token' element={<PasswordReset/>}/>
         <Route path='signup' element={<SignUp/>}/>
+        <Route path='admin' element={<Admin/>}/>
     </Route>
    </Routes>
    </BrowserRouter>

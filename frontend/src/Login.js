@@ -1,13 +1,15 @@
 import axios from 'axios';
 import React, { useState } from 'react'
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
 
   const [input,setInput]=useState({})
 const [massge,setMassge]=useState(false)
-
+       const [admin,setAdmin]=useState(false);
+       const [list,setList]=useState(false)
+       const navigate=useNavigate();
   const handleInput=(e)=>{
       let name=e.target.name;
       let value=e.target.value;
@@ -34,7 +36,11 @@ const [massge,setMassge]=useState(false)
           
           });
           setMassge(true)
+          if(res.data.email=="mb124969@gmail.com"){
+             setAdmin(true)
+          }
        }
+
        else{
         toast.error("password does not exist", {
           position: "top-center",
@@ -51,7 +57,20 @@ const [massge,setMassge]=useState(false)
 
     })
   }
-  
+  const handleOver=()=>{
+        setList(true);
+  }
+  const handleOut=()=>{
+    setList(false)
+
+
+  }
+  const handleAdmin=()=>{
+      navigate("/admin")
+  }
+  const hadleLogout=()=>{
+    localStorage.clear();
+  }
   return (
     <>
     
@@ -84,6 +103,17 @@ const [massge,setMassge]=useState(false)
         </div>
        </form>
        </div>
+      {admin? <div className='admin'>
+        <span onMouseOver={handleOver}>AD</span>
+       </div>:""}
+     {
+         list?  <div className='drop-list' onMouseLeave={handleOut}>
+         <ul>
+           <li onClick={handleAdmin}>Admin</li>
+           <li onClick={hadleLogout}>logout</li>
+         </ul>
+        </div>:""
+     }
        <ToastContainer />
     <Outlet/>
     </>

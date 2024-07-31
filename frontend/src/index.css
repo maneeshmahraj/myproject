@@ -992,3 +992,43 @@ opacity: 0.6;
   justify-content: center;
   align-items: center;
 }
+.admin{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: rgb(84, 84, 214);
+  color: white;
+  font-weight: bold;
+  top: 30px;
+  right: 80px;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.drop-list{
+  top:80px;
+  right: 57px;
+  flex-direction: column;
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  
+}
+.drop-list ul{
+  padding: 10px;
+}
+.drop-list ul li{
+list-style: none;
+font-size: 17px;
+color: rgb(250, 11, 238);
+padding: 10px;
+border-radius: 10px;
+
+}
+.drop-list ul li:hover{
+  background-color:pink ;
+}
