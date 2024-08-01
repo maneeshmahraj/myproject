@@ -10,7 +10,7 @@ const transporter=nodemailer.createTransport({
               service:"gmail",
               auth:{
                 user:"mb124969@gmail.com",
-                pass:"xsov uljt hh5v t2gx hhzx cm4m o25a 6flm"
+                pass:"lcgkqvqhnlxecfog"
               }
 })
 const regData=async(req,res)=>{
@@ -40,7 +40,7 @@ const logData=async(req,res)=>{
        if(user){
         const isPasswordValid=await bcrypt.compare(password,user.password);
         if(!isPasswordValid){
-            return;
+            res.json({massage:"password does not match"})
         } 
         else{
             const token=await jwt.sign({userId:user._id,username:user.name,email:user.email},secret_key);
@@ -67,7 +67,7 @@ const passwordReset=async(req,res)=>{
         const user=await regModel.findOne({email});
         if(user){
           const token=await jwt.sign({userId:user._id,email:user.email},secret_key,
-            {expiresIn:"420s"}
+            {expiresIn:"120s"}
           )
         const setusertoken=await regModel.findByIdAndUpdate({_id:user._id},{varifytoken:token},{new:true})
         if(setusertoken){
@@ -75,7 +75,7 @@ const passwordReset=async(req,res)=>{
                 from:"mb124969@gmail.com",
                 to:email,
                 subject:"sending email for password reset",
-                text:`this link valid only 4 minutes http://localhost:3000/forgetpassword/${user._id}/${setusertoken.varifytoken}`
+                text:`this link valid only 2 minutes http://localhost:3000/forgetpassword/${user._id}/${setusertoken.varifytoken}`
             }
             transporter.sendMail(mailOptions,(error,info)=>{
                 if(error){
@@ -96,10 +96,51 @@ const passwordReset=async(req,res)=>{
         
       }
 }
+const varifyData=async(req,res)=>{
+    const {id,token}=req.params;
+   try {
+        const userValid=await regModel.findOne({_id:id,varifytoken:token});
+    
+        const varifyToken=await jwt.verify(token,secret_key)
+       if(userValid&&varifyToken.userId){
+        res.status(201).json({status:201,userValid})
+       }
+       else{
+        res.status(401).json({status:401,massage:"user does not exist!!"})
 
+       }
+   } catch (error) {
+    console.error("invalid ",error)
+    
+   }
+}
+const passwordChange=async(req,res)=>{
+    const {id,token}=req.params;
+  const {password}=req.body
+    try {
+        const userValid=await regModel.findOne({_id:id,varifytoken:token});
+    
+        const varifyToken=await jwt.verify(token,secret_key)
+        if(userValid&&varifyToken.userId){
+           const newpassword=await bcrypt.hash(password,10)
+           const newuserpassword=await regModel.findByIdAndUpdate({_id:id},{password:newpassword})
+           newuserpassword.save();
+           res.status(201).json({status:201,newuserpassword})
 
+           }
+           else{
+            res.status(401).json({status:401,massage:"user does not exist!!"})
+    
+           }
+    } catch (error) {
+    console.error("invalid ",error)
+        
+    }
+}
 module.exports={
     regData,
     logData,
-    passwordReset
+    passwordReset,
+    varifyData,
+    passwordChange
 }

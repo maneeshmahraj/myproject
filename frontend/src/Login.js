@@ -7,8 +7,7 @@ const Login = () => {
 
   const [input,setInput]=useState({})
 const [massge,setMassge]=useState(false)
-       const [admin,setAdmin]=useState(false);
-       const [list,setList]=useState(false)
+      
        const navigate=useNavigate();
   const handleInput=(e)=>{
       let name=e.target.name;
@@ -36,9 +35,7 @@ const [massge,setMassge]=useState(false)
           
           });
           setMassge(true)
-          if(res.data.email=="mb124969@gmail.com"){
-             setAdmin(true)
-          }
+          
        }
 
        else{
@@ -57,20 +54,8 @@ const [massge,setMassge]=useState(false)
 
     })
   }
-  const handleOver=()=>{
-        setList(true);
-  }
-  const handleOut=()=>{
-    setList(false)
-
-
-  }
-  const handleAdmin=()=>{
-      navigate("/admin")
-  }
-  const hadleLogout=()=>{
-    localStorage.clear();
-  }
+ 
+ 
   return (
     <>
     
@@ -103,17 +88,7 @@ const [massge,setMassge]=useState(false)
         </div>
        </form>
        </div>
-      {admin? <div className='admin'>
-        <span onMouseOver={handleOver}>AD</span>
-       </div>:""}
-     {
-         list?  <div className='drop-list' onMouseLeave={handleOut}>
-         <ul>
-           <li onClick={handleAdmin}>Admin</li>
-           <li onClick={hadleLogout}>logout</li>
-         </ul>
-        </div>:""
-     }
+     
        <ToastContainer />
     <Outlet/>
     </>

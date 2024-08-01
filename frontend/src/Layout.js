@@ -1,28 +1,29 @@
 
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { IoBed } from "react-icons/io5";
 import { IoBedOutline } from "react-icons/io5";
-
 import { GiSofa } from "react-icons/gi";
-
 import { FaToiletPortable } from "react-icons/fa6";
-
 import { FaSearch } from "react-icons/fa";
 import { FaCartArrowDown } from "react-icons/fa6";
 import { IoNotifications } from "react-icons/io5";
-import { FaUser } from "react-icons/fa";
 import { HiBars3BottomLeft } from "react-icons/hi2";
 import { IoMdClose } from "react-icons/io";
 import { CiMobile3 } from "react-icons/ci";
 import { TfiEmail } from "react-icons/tfi";
 import { FaFacebookF } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
-import { Link, Outlet } from 'react-router-dom';
+import { Link, Outlet, useNavigate } from 'react-router-dom';
+const username=localStorage.getItem("username")
 const Layout = () => {
 
     const [isShow,setIsShow]=useState(false);
     const [isShow2,setIsShow2]=useState(false);
     const [sideWar,setSideWar]=useState(false)
+    const [admin,setAdmin]=useState(false);
+    const [list,setList]=useState(false)
+    const navigate=useNavigate();
+
     const handleMouseOver=()=>{
          setIsShow(!isShow);
      setIsShow2(false)
@@ -48,6 +49,26 @@ const Layout = () => {
     const handleClose=()=>{
         setSideWar(false)
     }
+    const handleOver=()=>{
+        setList(true);
+  }
+  const handleOut=()=>{
+    setList(false)
+
+
+  }
+  const handleAdmin=()=>{
+      navigate("/admin")
+  }
+  const hadleLogout=()=>{
+    localStorage.clear();
+    navigate("/home")
+  }
+  useEffect(()=>{
+   if(username=="maneesh budholiya"){
+    setAdmin(true)
+   }
+  },[username])
   return (
    <>
    <nav>
@@ -80,8 +101,9 @@ const Layout = () => {
                 <li ><FaSearch /></li>
                  <li><FaCartArrowDown /></li>
                   <li><IoNotifications /></li>
-                  <li><FaUser /></li>
                   <li><HiBars3BottomLeft onClick={handleClick} /></li>
+                  <li onClick={hadleLogout} className='logout' style={{color:"purple",paddingTop:"10px"}}>logout</li>
+
             </ul>
       
         </div> 
@@ -179,6 +201,17 @@ const Layout = () => {
     </div>
 </div>:''
   }
+   {admin? <div className='admin'>
+        <span onMouseOver={handleOver}>AD</span>
+       </div>:""}
+     {
+         list?  <div className='drop-list' onMouseLeave={handleOut}>
+         <ul>
+           <li onClick={handleAdmin}style={{cursor:"pointer"}}>Admin</li>
+           
+         </ul>
+        </div>:""
+     }
 <Outlet/>
    </>
   )

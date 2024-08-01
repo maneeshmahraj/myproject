@@ -4,5 +4,7 @@ const router=express.Router();
 const regController=require("../regController.js/registrationController")
 router.post("/registration",regController.regData)
 router.post("/login",regController.logData)
-router.post("/email",regController.passwordReset)
+router.post("/email",regController.passwordReset);
+router.get("/forgatepassword/:id/:token",regController.varifyData)
+router.post("/newpassword/:id/:token",regController.passwordChange)
 module.exports=router

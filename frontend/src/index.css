@@ -46,7 +46,16 @@ code {
   width: 95%;
   display: flex;
   height: 80px;
-  margin: auto;
+  
+  top:0px;
+  left:30px;
+  position: fixed;
+  z-index: 1;
+  background-color: white;
+  border-bottom-left-radius:10px ;
+  border-bottom-right-radius:10px ;
+  
+
 }
 .nav-logo
 {
@@ -95,7 +104,7 @@ code {
    top:80px;
    left:0px;
    width: 100%;
-   position: absolute;
+   position: fixed;
    height: 100px;
    font-size: 60px;
    z-index: 1;
@@ -104,6 +113,7 @@ code {
    justify-content: center;
    align-items: center;
    cursor: pointer;
+   z-index: 1;
   
 }
 .nav-layout2
@@ -147,6 +157,7 @@ code {
   height: 400px;
   width: 100%;
   z-index: -1;
+  margin-top: 80px;
 }
 .icons-home
 {
@@ -154,6 +165,8 @@ code {
   font-size: 50px;
   width: 90%;
   margin: auto;
+  
+
 }
 .nav-layout3
 {
@@ -916,7 +929,7 @@ opacity: 0.6;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   margin: 80px auto;
+   margin: 150px auto;
 }
 .login-page form{
   width: 40%;
@@ -999,19 +1012,19 @@ opacity: 0.6;
   background-color: rgb(84, 84, 214);
   color: white;
   font-weight: bold;
-  top: 30px;
-  right: 80px;
+  top: 80px;
+  right: 30px;
   position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
+  z-index: 1;
 }
 .drop-list{
-  top:80px;
-  right: 57px;
-  flex-direction: column;
-  
+  top:120px;
+  right: 10px;
+  flex-direction: column; 
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1031,4 +1044,23 @@ border-radius: 10px;
 }
 .drop-list ul li:hover{
   background-color:pink ;
+}
+.logout{
+  /* style={{cursor:"pointer",fontSize:"16px",color:"purple",fontWeight:"bold"}} */
+  color: purple;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+
+ 
+}
+.logout:hover{
+  color: lightslategray;
+}
+.admin-page {
+  width: 100%;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-top: 150px;
+  border: 1px solid black;
 }

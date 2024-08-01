@@ -19,7 +19,7 @@ const Forgetpassword = () => {
           setEmail("");
           setMassage(true)
           toast(res.data)
-          navigate("/forgetpassword/:id/:token")
+         
          }
          else{
           toast.error("invelid user")
