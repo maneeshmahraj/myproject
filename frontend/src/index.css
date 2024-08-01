@@ -1013,7 +1013,7 @@ opacity: 0.6;
   color: white;
   font-weight: bold;
   top: 80px;
-  right: 30px;
+  right: 50px;
   position: fixed;
   display: flex;
   justify-content: center;
@@ -1023,7 +1023,7 @@ opacity: 0.6;
 }
 .drop-list{
   top:120px;
-  right: 10px;
+  right: 20px;
   flex-direction: column; 
   display: flex;
   justify-content: center;
@@ -1037,13 +1037,23 @@ opacity: 0.6;
 .drop-list ul li{
 list-style: none;
 font-size: 17px;
-color: rgb(250, 11, 238);
-padding: 10px;
+color: black;
+font-family: Arial, Helvetica, sans-serif;
+padding: 6px;
+width: 100px;
+border: .7px solid black;
+background-color: black;
+color: white;
+display: flex;
+align-items: center;
+justify-content: center;
 border-radius: 10px;
 
 }
 .drop-list ul li:hover{
-  background-color:pink ;
+  background-color: white;
+  border: 1px solid black;
+  color: black;
 }
 .logout{
   /* style={{cursor:"pointer",fontSize:"16px",color:"purple",fontWeight:"bold"}} */

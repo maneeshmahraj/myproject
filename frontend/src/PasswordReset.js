@@ -45,7 +45,9 @@ const handleClick=async(e)=>{
     <form >
      <div className='login-heading'>
        <h1>Enter Your Password</h1>
-      
+       {
+            massage?<p style={{color:"green"}}>New password  successfully change!!</p>:""
+         }
      </div>
      <div className='login-items'>
        <label for="password">New Password</label>
