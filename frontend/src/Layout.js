@@ -207,7 +207,8 @@ const Layout = () => {
      {
          list?  <div className='drop-list' onMouseLeave={handleOut}>
          <ul>
-           <li onClick={handleAdmin}style={{cursor:"pointer"}}>Admin</li>
+           <li onClick={handleAdmin} style={{cursor:"pointer"}}>Admin</li>
+           <li onClick={hadleLogout}  style={{cursor:"pointer"}}>logout</li>
            
          </ul>
         </div>:""

@@ -8,4 +8,5 @@ router.post("/login",regController.logData)
 router.post("/email",regController.passwordReset);
 router.get("/forgatepassword/:id/:token",regController.varifyData)
 router.post("/newpassword/:id/:token",regController.passwordChange)
+
 module.exports=router

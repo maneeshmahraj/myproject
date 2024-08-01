@@ -1024,11 +1024,12 @@ opacity: 0.6;
 .drop-list{
   top:120px;
   right: 20px;
+  z-index: 1;
   flex-direction: column; 
   display: flex;
   justify-content: center;
   align-items: center;
-  position: absolute;
+  position: fixed;
   
 }
 .drop-list ul{
@@ -1041,6 +1042,8 @@ color: black;
 font-family: Arial, Helvetica, sans-serif;
 padding: 6px;
 width: 100px;
+margin: 10px;
+
 border: .7px solid black;
 background-color: black;
 color: white;
@@ -1167,4 +1170,19 @@ border-radius: 10px;
 }
 .link:hover{
   color: white;
+}
+.login-items select{
+  width: 95%;
+  height: 40px;
+  outline: none;
+  margin-left: 10px;
+  border: .7px solid rgb(87, 127, 214);
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+.login-items select option{
+  flex-direction: column;
+  display: flex;
+  justify-content:center;
+  align-items: center;
 }

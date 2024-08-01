@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 
 const Admin = () => {
   return (
@@ -18,15 +18,16 @@ const Admin = () => {
       <div className='admin-logo2'>
         <div className='admin-sidewar'>
           <ul>
-            <li><Link to="insert" className='link'>Data Insert</Link></li>
-            <li><Link to="insert" className='link'>Data Display</Link></li>
-            <li><Link to="insert" className='link'>Data Update</Link></li>
-            <li><Link to="insert" className='link'>Ordered Items</Link></li>
+            <li><Link to="/insert" className='link'>Data Insert</Link></li>
+            <li><Link to="display" className='link'>Data Display</Link></li>
+            <li><Link to="update" className='link'>Data Update</Link></li>
+            <li><Link to="ordered" className='link'>Ordered Items</Link></li>
 
           </ul>
         </div>
       </div>
     </div>
+    <Outlet/>
     </>
   )
 }
