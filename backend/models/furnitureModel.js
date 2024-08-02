@@ -17,9 +17,11 @@ const furnitureSchema=new mongoose.Schema({
         type:String,
         required:true
        },
-       status:Boolean,
-       quentity:{
-        type:Number
-       }
+       about:{
+        type:String,
+        required:true
+       },
+       status:Boolean
+      
 })
 module.exports=mongoose.model("furniture",furnitureSchema)

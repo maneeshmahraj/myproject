@@ -15,6 +15,7 @@ import { FaFacebookF } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
 import { Link, Outlet, useNavigate } from 'react-router-dom';
 const username=localStorage.getItem("username")
+const email=localStorage.getItem("email")
 const Layout = () => {
 
     const [isShow,setIsShow]=useState(false);
@@ -65,8 +66,10 @@ const Layout = () => {
     navigate("/home")
   }
   useEffect(()=>{
-   if(username=="maneesh budholiya"){
+   if(username=="maneesh budholiya" && email=="mb124969@gmail.com"){
     setAdmin(true)
+    
+
    }
   },[username])
   return (
@@ -208,8 +211,7 @@ const Layout = () => {
          list?  <div className='drop-list' onMouseLeave={handleOut}>
          <ul>
            <li onClick={handleAdmin} style={{cursor:"pointer"}}>Admin</li>
-           <li onClick={hadleLogout}  style={{cursor:"pointer"}}>logout</li>
-           
+           <li onClick={hadleLogout}  style={{cursor:"pointer"}}>logout</li>           
          </ul>
         </div>:""
      }

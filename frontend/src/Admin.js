@@ -1,7 +1,11 @@
 import React from 'react'
-import { Link, Outlet } from 'react-router-dom'
-
+import { Link, Navigate, Outlet } from 'react-router-dom'
+import { isAuthanticated } from './utils/auth'
 const Admin = () => {
+
+  if(!isAuthanticated()){
+     return <Navigate to="/login"/>
+  }
   return (
     <>
     <div className='admin-page'>
@@ -19,9 +23,9 @@ const Admin = () => {
         <div className='admin-sidewar'>
           <ul>
             <li><Link to="/insert" className='link'>Data Insert</Link></li>
-            <li><Link to="display" className='link'>Data Display</Link></li>
-            <li><Link to="update" className='link'>Data Update</Link></li>
-            <li><Link to="ordered" className='link'>Ordered Items</Link></li>
+            <li><Link to="/display" className='link'>Data Display</Link></li>
+            <li><Link to="/update" className='link'>Data Update</Link></li>
+            <li><Link to="/ordered" className='link'>Ordered Items</Link></li>
 
           </ul>
         </div>

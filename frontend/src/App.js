@@ -1,5 +1,5 @@
 import React from 'react'
- import {BrowserRouter,Routes,Route} from 'react-router-dom';
+ import {BrowserRouter,Routes,Route, Navigate} from 'react-router-dom';
 import Layout from './Layout'
 import Home from './Home'
 import Festivesale from './Festivesale'
@@ -12,6 +12,8 @@ import PasswordReset from './PasswordReset';
 import SignUp from './SignUp';
 import Admin from './Admin';
 import Insert from './Insert';
+import { isAuthanticated } from './utils/auth';
+import Display from './Display';
 const App = () => {
   return (
    <>
@@ -26,8 +28,9 @@ const App = () => {
         <Route path='passwordreset' element={<Forgetpassword/>}/>
         <Route path='forgetpassword/:id/:token' element={<PasswordReset/>}/>
         <Route path='signup' element={<SignUp/>}/>
-        <Route path='admin' element={<Admin/>}/>
-        <Route path='insert' element={<Insert/>}/>
+        <Route path='admin' element={isAuthanticated()?<Admin/>:<Navigate to="/login"/>}/>
+        <Route path='insert' element={isAuthanticated()?<Insert/>:<Navigate to="/login"/>}/>
+        <Route path='display' element={<Display/>}/>
     </Route>
    </Routes>
    </BrowserRouter>
