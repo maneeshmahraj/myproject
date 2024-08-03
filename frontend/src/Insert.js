@@ -53,7 +53,7 @@ if(!isAuthanticated()){
         </div>
         <div className='login-items'>
           <label for="price">price</label>
-          <input type='text' placeholder='Enter your product price' name="price" onChange={handleInput} />
+          <input type='number' placeholder='Enter your product price' name="price" onChange={handleInput} />
         </div>
         <div className='login-items'>
           <label for="image">Image</label>
@@ -70,7 +70,7 @@ if(!isAuthanticated()){
           <option>Double Bed</option>
           <option>Single Bed</option>
           <option>Study table</option>
-          <option> sofa</option>
+          <option>Dresser</option>
           <option> dining-table</option>
           <option>wardrobe</option>
           <option>coffee-table</option>

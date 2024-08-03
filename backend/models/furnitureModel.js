@@ -6,7 +6,7 @@ const furnitureSchema=new mongoose.Schema({
         required:true
     },
        price:{
-        type:String,
+        type:Number,
         required:true
        },
        image:{
@@ -21,7 +21,12 @@ const furnitureSchema=new mongoose.Schema({
         type:String,
         required:true
        },
-       status:Boolean
+       status:Boolean,
+       ratting:[
+        {
+            type:Number
+           }
+       ]
       
 })
 module.exports=mongoose.model("furniture",furnitureSchema)

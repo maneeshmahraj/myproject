@@ -23,8 +23,8 @@ const Display = () => {
           <span>
          {key.about}
           </span>
-          <p><MdCurrencyRupee /><span style={{fontSize:"15px"}} className='rupey'>{key.price}</span></p>
-          <h3><MdCurrencyRupee />{key.price}/Month</h3>
+          <p><MdCurrencyRupee style={{marginLeft:"100px"}} /><span style={{fontSize:"15px"}} className='rupey2'>{key.price}</span></p>
+          <h3><MdCurrencyRupee style={{color:"orangered"}} />{key.price}/Month</h3>
         </div>
         </>
     )

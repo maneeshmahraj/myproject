@@ -12,5 +12,8 @@ router.post("/cloudinaryurl",furniController.furnitureData)
 router.get("/displaydata",furniController.displayData);
 router.post("/deleteData",furniController.delData);
 router.post("/editData",furniController.editData);
-router.post("/updateData",furniController.udateData)
+router.post("/updateData",furniController.udateData);
+router.get("/doulbebeddata",furniController.doubleBedData)
+router.post("/stardata",furniController.starData)
+
 module.exports=router

@@ -16,6 +16,7 @@ import { isAuthanticated } from './utils/auth';
 import Display from './Display';
 import Update from './Update';
 import Edit from './Edit';
+import Doublebed from './Doublebed';
 const App = () => {
   return (
    <>
@@ -35,6 +36,7 @@ const App = () => {
         <Route path='display' element={<Display/>}/>
         <Route path='update' element={isAuthanticated()?<Update/>:<Navigate to="/login"/>}/>
         <Route path='/edit/:id' element={isAuthanticated()?<Edit/>:<Navigate to="/login"/>}/>
+        <Route path='doublebed' element={<Doublebed/>}/>
     </Route>
    </Routes>
    </BrowserRouter>

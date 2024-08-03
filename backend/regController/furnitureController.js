@@ -70,10 +70,33 @@ const udateData=async(req,res)=>{
       }
    
 }
+const doubleBedData=async(req,res)=>{
+    try {
+        await furniModel.find({catagory:"Double Bed"}).then((data)=>{
+             res.status(201).json({mydata:data})    
+        })
+       } catch (error) {
+        console.error("error",error)
+        res.status(401).json({massage:"data is not found"})
+       }
+}
+const starData=async(req,res)=>{
+    const {id,ratting,status}=req.body;
+   try {
+        await furniModel.findByIdAndUpdate(id,{ratting:ratting,status:status}).then((responc)=>{
+            res.status(201).json(responc);
+        })
+   } catch (error) {
+    console.error("error",error)
+        res.status(401).json({massage:"data is not found"})
+   }
+}
 module.exports={
     furnitureData,
     displayData,
     delData,
     editData,
-    udateData
+    udateData,
+    doubleBedData,
+    starData
 }

@@ -40,8 +40,8 @@ const Update = () => {
           <span>
          {key.about}
           </span>
-          <p><MdCurrencyRupee /><span style={{fontSize:"15px"}} className='rupey'>{key.price}</span></p>
-          <h3><MdCurrencyRupee />{key.price}/Month</h3>
+          <p><MdCurrencyRupee style={{marginLeft:"100px"}} /><span style={{fontSize:"15px"}} className='rupey2'>{key.price}</span></p>
+          <h3><MdCurrencyRupee style={{color:"orangered"}} />{key.price}/Month</h3>
           <div className='del' onClick={()=>{deleteitems(key._id)}} ><button>Delete</button></div>
           <div className='edit'onClick={()=>{editData(key._id)}} ><button>Edit</button></div>
         </div>
