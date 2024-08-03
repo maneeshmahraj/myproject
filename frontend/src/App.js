@@ -17,6 +17,10 @@ import Display from './Display';
 import Update from './Update';
 import Edit from './Edit';
 import Doublebed from './Doublebed';
+import Singlebed from './Singlebed';
+import Bardrobe from './Wardrobe';
+import Dresser from './Dresser';
+import Studytable from './Studytable';
 const App = () => {
   return (
    <>
@@ -37,6 +41,10 @@ const App = () => {
         <Route path='update' element={isAuthanticated()?<Update/>:<Navigate to="/login"/>}/>
         <Route path='/edit/:id' element={isAuthanticated()?<Edit/>:<Navigate to="/login"/>}/>
         <Route path='doublebed' element={<Doublebed/>}/>
+        <Route path='singlebed' element={<Singlebed/>}/>
+        <Route path='bardrobe' element={<Bardrobe/>}/>
+        <Route path='dresser' element={<Dresser/>}/>
+        <Route path='studytable' element={<Studytable/>}/>
     </Route>
    </Routes>
    </BrowserRouter>

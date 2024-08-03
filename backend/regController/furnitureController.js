@@ -91,6 +91,46 @@ const starData=async(req,res)=>{
         res.status(401).json({massage:"data is not found"})
    }
 }
+const singleBedData=async(req,res)=>{
+    try {
+        await furniModel.find({catagory:"Single Bed"}).then((data)=>{
+             res.status(201).json({mydata:data})    
+        })
+       } catch (error) {
+        console.error("error",error)
+        res.status(401).json({massage:"data is not found"})
+       }
+}
+const bardrobedataData=async(req,res)=>{
+    try {
+        await furniModel.find({catagory:"wardrobe"}).then((data)=>{
+             res.status(201).json({mydata:data})    
+        })
+       } catch (error) {
+        console.error("error",error)
+        res.status(401).json({massage:"data is not found"})
+       }
+}
+const dresserData=async(req,res)=>{
+    try {
+        await furniModel.find({catagory:"Dresser"}).then((data)=>{
+            res.status(201).json({mydata:data})    
+       })
+    } catch (error) {
+        console.error("error",error)
+        res.status(401).json({massage:"data is not found"}) 
+    }
+}
+const studytableData=async(req,res)=>{
+    try {
+        await furniModel.find({catagory:"Study table"}).then((data)=>{
+            res.status(201).json({mydata:data})    
+       })
+    } catch (error) {
+        console.error("error",error)
+        res.status(401).json({massage:"data is not found"}) 
+    }
+}
 module.exports={
     furnitureData,
     displayData,
@@ -98,5 +138,9 @@ module.exports={
     editData,
     udateData,
     doubleBedData,
-    starData
+    starData,
+    singleBedData,
+    bardrobedataData,
+    dresserData,
+    studytableData
 }

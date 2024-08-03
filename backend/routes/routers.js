@@ -15,5 +15,10 @@ router.post("/editData",furniController.editData);
 router.post("/updateData",furniController.udateData);
 router.get("/doulbebeddata",furniController.doubleBedData)
 router.post("/stardata",furniController.starData)
+router.get("/singlebeddata",furniController.singleBedData)
+router.get("/bardrobedata",furniController.bardrobedataData)
+router.get("/dresserdata",furniController.dresserData)
+router.get("/studytabledata",furniController.studytableData)
+
 
 module.exports=router
