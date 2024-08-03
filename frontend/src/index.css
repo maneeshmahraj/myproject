@@ -1243,10 +1243,62 @@ align-items: center;
   width: 270px;
   background-color: white;
   flex-direction: column;
+  overflow: hidden;
   margin: 0px 20px;
+
 
 }
 .items-shop-detail3 img
 {
   width: 270px;
+}
+.del{
+  top:10px;
+  left:10px;
+  position: relative;
+}
+.del button{
+  width: 100px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black;
+  border: .7px solid black;
+  cursor: pointer;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+
+}
+.del button:hover{
+  background-color: white;
+  color: black;
+}
+.edit{
+  top:-25px;
+  left:140px;
+  position: relative;
+}
+.edit button{
+  width: 100px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: orangered;
+  border: .7px solid orangered;
+  cursor: pointer;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  border-radius: 5px;
+  color: lime;
+  font-weight: bold;
+
+}
+.edit button:hover{
+  background-color: white;
+  color: black;
 }

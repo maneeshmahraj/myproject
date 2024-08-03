@@ -35,8 +35,45 @@ const displayData=async(req,res)=>{
    }
 }
 
-
+const delData=async(req,res)=>{
+    const {id}=req.body;
+    try {
+       furniModel.findByIdAndDelete(id).then((responc)=>{
+        res.status(201).json("data successfully delete!!")
+       })
+    } catch (error) {
+    res.status(401).json({massage:"data is not found"})
+        
+    }
+}
+const editData=async(req,res)=>{
+    const {id}=req.body;
+    try {
+       furniModel.findById(id).then((data)=>{
+        res.status(201).json(data)
+       })
+    } catch (error) {
+    res.status(401).json({massage:"data is not found"})
+        
+    }
+}
+const udateData=async(req,res)=>{
+    const {id,name,price,about,catagory}=req.body;
+      try {
+            await furniModel.findByIdAndUpdate(id,{id,name,price,about,catagory}).then((respnc)=>{
+                res.status(201).json("data successfully updated!!")
+            })
+      } catch (error) {
+        console.error("error",error)
+    res.status(401).json({massage:"error"})
+        
+      }
+   
+}
 module.exports={
     furnitureData,
-    displayData
+    displayData,
+    delData,
+    editData,
+    udateData
 }

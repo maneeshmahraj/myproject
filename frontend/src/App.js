@@ -14,6 +14,8 @@ import Admin from './Admin';
 import Insert from './Insert';
 import { isAuthanticated } from './utils/auth';
 import Display from './Display';
+import Update from './Update';
+import Edit from './Edit';
 const App = () => {
   return (
    <>
@@ -31,6 +33,8 @@ const App = () => {
         <Route path='admin' element={isAuthanticated()?<Admin/>:<Navigate to="/login"/>}/>
         <Route path='insert' element={isAuthanticated()?<Insert/>:<Navigate to="/login"/>}/>
         <Route path='display' element={<Display/>}/>
+        <Route path='update' element={isAuthanticated()?<Update/>:<Navigate to="/login"/>}/>
+        <Route path='/edit/:id' element={isAuthanticated()?<Edit/>:<Navigate to="/login"/>}/>
     </Route>
    </Routes>
    </BrowserRouter>
