@@ -5,7 +5,7 @@
 import { GiSofa } from "react-icons/gi";
 
 import Festivesale from './Festivesale';
-
+import { Link, Outlet } from 'react-router-dom';
 
   const Home = () => {
     return (
@@ -45,24 +45,24 @@ import Festivesale from './Festivesale';
 <div className='icons-home'>
 <div className='nav-layout3'>
          <ul>
-            <li> <IoBed />
+            <li> <Link to="/doublebed" className='lnk-nav'><IoBed /></Link>
            <p style={{fontSize:"15px", marginTop:"-10px", marginLeft:"-8px"}}> DOUBLE-BED</p>
             </li>
 
            <li> <img src="images/chare.jpeg" style={{height:"55px"}}/>
            <p style={{fontSize:"15px", marginTop:"-10px", marginLeft:"-8px"}}> WORK OFFICE</p>
            </li>
-           <li><img src="images/wardrobe.jpeg" style={{height:"55px"}}/>
+           <li> <Link to="/bardrobe" className='lnk-nav'> <img src="images/wardrobe.jpeg" style={{height:"55px"}}/></Link>
            <p style={{fontSize:"15px", marginTop:"-10px", marginLeft:"-8px"}}> BARDROBE</p>
            </li>
            <li><img src="images/workhome.png" className='w-home'/>
            <p style={{fontSize:"15px", marginTop:"-10px", marginLeft:"-8px"}}>WORK-HOME</p>
            </li>
            
-           <li><img src="images/dresser.jpeg" style={{height:"55px"}}/>
+           <li><Link to="/dresser" className='lnk-nav'><img src="images/dresser.jpeg" style={{height:"55px"}}/></Link>
            <p style={{fontSize:"15px", marginTop:"-10px", marginLeft:"-8px"}}> DRESSER</p>
            </li>
-           <li><img src="images/studytable.png" style={{height:"55px"}}/>
+           <li> <Link to="/studytable" className='lnk-nav'> <img src="images/studytable.png" style={{height:"55px"}}/></Link>
            <p style={{fontSize:"15px", marginTop:"-10px", marginLeft:"-8px"}}> STUDY-TABLE</p>
            </li>
            <li><GiSofa />
@@ -82,6 +82,7 @@ import Festivesale from './Festivesale';
 
       </div>
       <Festivesale/>
+      <Outlet/>
       </>
     )
   }

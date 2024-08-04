@@ -117,20 +117,28 @@ const Layout = () => {
       
       <div className='nav-layout2'>
       <ul>
-         <li> <IoBed />
+         <li > <Link to="/doublebed" className='lnk-nav'><IoBed /></Link>
         <p style={{fontSize:"15px", marginTop:"-10px", marginLeft:"-8px"}}> DOUBLE-BED</p>
          </li>
 
-        <li> <IoBedOutline />
+        <li> 
+        <Link to="/singlebed" className='lnk-nav'> <IoBedOutline /></Link>
+
         <p style={{fontSize:"15px", marginTop:"-10px", marginLeft:"-8px"}}> SINGLE-BED</p>
         </li>
-        <li><img src="images/wardrobe.jpeg" style={{height:"55px"}}/>
+        <li>
+        <Link to="/bardrobe" className='lnk-nav'> <img src="images/wardrobe.jpeg" style={{height:"55px"}}/></Link>
+           
         <p style={{fontSize:"15px", marginTop:"-10px", marginLeft:"-8px"}}> BARDROBE</p>
         </li>
-        <li><img src="images/dresser.jpeg" style={{height:"55px"}}/>
+        <li>
+        <Link to="/dresser" className='lnk-nav'><img src="images/dresser.jpeg" style={{height:"55px"}}/></Link>
+            
         <p style={{fontSize:"15px", marginTop:"-10px", marginLeft:"-8px"}}> DRESSER</p>
         </li>
-        <li><img src="images/studytable.png" style={{height:"55px"}}/>
+        <li>
+        <Link to="/studytable" className='lnk-nav'> <img src="images/studytable.png" style={{height:"55px"}}/></Link>
+           
         <p style={{fontSize:"15px", marginTop:"-10px", marginLeft:"-8px"}}> STUDY-TABLE</p>
         </li>
         </ul>
