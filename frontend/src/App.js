@@ -21,6 +21,7 @@ import Singlebed from './Singlebed';
 import Bardrobe from './Wardrobe';
 import Dresser from './Dresser';
 import Studytable from './Studytable';
+import Cart from './Cart';
 const App = () => {
   return (
    <>
@@ -45,6 +46,7 @@ const App = () => {
         <Route path='bardrobe' element={<Bardrobe/>}/>
         <Route path='dresser' element={<Dresser/>}/>
         <Route path='studytable' element={<Studytable/>}/>
+        <Route path='cart' element={<Cart/>}/>
     </Route>
    </Routes>
    </BrowserRouter>

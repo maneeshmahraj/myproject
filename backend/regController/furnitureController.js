@@ -131,6 +131,17 @@ const studytableData=async(req,res)=>{
         res.status(401).json({massage:"data is not found"}) 
     }
 }
+const addCardData=async(req,res)=>{
+    try {
+        const {id}=req.body;
+        await furniModel.findById(id).then((responc)=>{
+            res.status(201).json(responc);
+        })
+    } catch (error) {
+        console.error("error",error)
+        res.status(401).json({massage:"data is not found"}) 
+    }
+}
 module.exports={
     furnitureData,
     displayData,
@@ -142,5 +153,6 @@ module.exports={
     singleBedData,
     bardrobedataData,
     dresserData,
-    studytableData
+    studytableData,
+    addCardData
 }

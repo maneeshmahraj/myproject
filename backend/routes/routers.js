@@ -19,6 +19,6 @@ router.get("/singlebeddata",furniController.singleBedData)
 router.get("/bardrobedata",furniController.bardrobedataData)
 router.get("/dresserdata",furniController.dresserData)
 router.get("/studytabledata",furniController.studytableData)
-
+router.post("/addcard",furniController.addCardData)
 
 module.exports=router

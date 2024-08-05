@@ -72,6 +72,9 @@ const Layout = () => {
 
    }
   },[username])
+  const cartHandle=()=>{
+    navigate("/cart")
+  }
   return (
    <>
    <nav>
@@ -102,7 +105,7 @@ const Layout = () => {
      
             <ul>
                 <li ><FaSearch /></li>
-                 <li><FaCartArrowDown /></li>
+                 <li onClick={cartHandle}><FaCartArrowDown /></li>
                   <li><IoNotifications /></li>
                   <li><HiBars3BottomLeft onClick={handleClick} /></li>
                   <li onClick={hadleLogout} className='logout' style={{color:"purple",paddingTop:"10px"}}>logout</li>
