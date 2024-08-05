@@ -298,6 +298,7 @@ code {
   overflow: hidden;
   background-color: rgb(255, 251, 251);
   transform: all .4s;
+
 }
 .heading-promiss
 {
@@ -305,7 +306,8 @@ code {
   display: flex;
   justify-content: center;
   align-items: center;
-
+font-family: Georgia, 'Times New Roman', Times, serif;
+   font-style: italic;
 }
 
 .icon-promiss
@@ -327,7 +329,8 @@ code {
   font-size: 70px;
   flex-direction: column;
   color: gray;
-
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
   justify-content: center;
   align-items: center;
  
@@ -410,7 +413,7 @@ code {
 {
   width:30%;
   height: 230px;
- font-family:'Times New Roman', Times, serif;
+ 
  display: flex;
   text-align: center;
 left: 30px;
@@ -419,6 +422,10 @@ align-items: flex-start;
 position: relative;
   align-items: center;
   font-size: 22px;
+}
+.item-range span{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
 }
 .item-range-btn
 {
@@ -436,6 +443,8 @@ position: relative;
   font-size: 16px;
   height: 50px;
   color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+   font-style: italic;
  
 }
 .hr-line
@@ -471,6 +480,8 @@ position: relative;
  left: 40%;
   position: relative;
    border-left: 1px solid white;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   font-style: italic;
 }
 .items-shop-detail1
 {
@@ -492,7 +503,8 @@ position: relative;
   flex-wrap: wrap;
   text-align: center;
   margin: auto;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+   font-style: italic;
   align-items: center;
   font-size: 20px;
 
@@ -594,6 +606,8 @@ position: relative;
     justify-content: space-between;
     flex-direction: column;
     align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-style: italic;
     
   }
 }
@@ -602,6 +616,8 @@ position: relative;
   width: 30%;
   display: flex;
   flex-wrap: wrap;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
 }
 .text-home p
 {
@@ -614,6 +630,8 @@ position: relative;
 margin-left: 30px;
 font-size: 20px;
 align-items: flex-start;
+font-family: Georgia, 'Times New Roman', Times, serif;
+font-style: italic;
 }
 .item-range-btn2 button
 {
@@ -622,6 +640,8 @@ align-items: flex-start;
   border: 1px solid black;
   background-color: rgb(221, 215, 215);
   font-size: 16px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+   font-style: italic;
   height: 50px;
   top:40px;
   left: 200px;
@@ -712,7 +732,8 @@ align-items: flex-start;
   flex-wrap: wrap;
   text-align: center;
   margin: auto;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+   font-style: italic;
   align-items: center;
   font-size: 20px;
 
@@ -731,12 +752,17 @@ align-items: flex-start;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+   font-style: italic;
+
 
 }
 .heading-promiss2 p{
 
   font-size: 20px;
   color: gray;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+   font-style: italic;
 }
 .date
 {
@@ -773,6 +799,8 @@ opacity: 0.6;
 {
   text-decoration: none;
   color: black;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+
 }
 .read-more-btn .lnk:hover {
 
@@ -804,6 +832,7 @@ opacity: 0.6;
   flex-direction: column;
   margin-top: 100px;
   align-items: center;
+
 
 }
 .input-box
@@ -1385,5 +1414,118 @@ align-items: center;
 }
 .cart{
   width: 100%;
-  margin-top: 100px;
+  margin-top: 200px;
+  display: flex;
+ 
+}
+.cart-items-dt{
+  width: 70%;
+  
+   padding: 20px;
+   flex-direction: column;
+}
+.cart-items-dt h3{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(26, 5, 5);
+    font-style: italic;
+}
+.cart-items-dt1 h3{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: rgb(26, 5, 5);
+  font-style: italic;
+   padding-bottom: 30px;
+}
+.cart-items-dt1{
+  width: 30%;
+  margin:0px 20px;
+  flex-direction: column;
+ justify-content: space-around;
+ background-color: rgb(236, 234, 234);
+  padding: 20px;
+
+}
+.item-sumry{
+  display: flex;
+  width: 100%;
+  height: 40px;
+  border-bottom: .7px solid gray;
+  justify-content: space-between;
+  margin-top: 20px;
+  
+}
+.item-sumry span{
+  color: rgb(41, 12, 12);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+ font-style: italic;
+}
+.payment{
+  width: 100%;
+  height: 40px;
+  border: .7px solid rgb(160, 13, 62);
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  background-color: rgb(160, 13, 62) ;
+  color: white;
+  font-size: 20px;
+  justify-content: center;
+  align-items: center;
+  margin-top: 42px;
+}
+.payment:hover{
+  background-color: black;
+  border: .7px solid black;
+
+}
+.cart-meenu{
+  width: 100%;
+  height: 200px;
+  border: .7px solid rgb(177, 176, 176);
+  background-color: rgb(238, 236, 236);
+  display: flex;
+  flex-wrap: wrap;
+  
+}
+.cart-meenu1{
+  height: 200px;
+  width: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10px;
+  position: absolute;
+}
+.cart-meenu1 img{
+  height:150px;
+  width: 180px;
+  
+}
+.cart-meenu p{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-style: italic;
+  top:30px;
+  left: 220px;
+  font-size: 18px;
+  position: relative;
+}
+.cart-meenu2{
+  top: 80px;
+  left:-260px;
+  position: relative;
+}
+.cart-meenu2 h3{
+  color: orangered;
+}
+.cart-remove button{
+    top:0px;
+    left: 184px;
+    padding: 5px;
+    width: 30px;
+    border: .7px solid rgb(177, 176, 176);
+    height: 33px;
+    position: relative;
+}
+.cart-remove button:hover{
+  background-color: rgb(202, 41, 41) ;
+  color: white;
+  border: .7px solid rgb(202, 41, 41);
 }
