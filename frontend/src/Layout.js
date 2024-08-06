@@ -14,6 +14,8 @@ import { TfiEmail } from "react-icons/tfi";
 import { FaFacebookF } from "react-icons/fa";
 import { CiInstagram } from "react-icons/ci";
 import { Link, Outlet, useNavigate } from 'react-router-dom';
+import { useSelector } from 'react-redux';
+
 const username=localStorage.getItem("username")
 const email=localStorage.getItem("email")
 const Layout = () => {
@@ -23,6 +25,8 @@ const Layout = () => {
     const [sideWar,setSideWar]=useState(false)
     const [admin,setAdmin]=useState(false);
     const [list,setList]=useState(false)
+  const cartItems=useSelector((state)=>state.furniture.items);
+
     const navigate=useNavigate();
 
     const handleMouseOver=()=>{
@@ -105,7 +109,7 @@ const Layout = () => {
      
             <ul>
                 <li ><FaSearch /></li>
-                 <li onClick={cartHandle}><FaCartArrowDown /></li>
+                 <li onClick={cartHandle}><FaCartArrowDown /><span className='cartnumber'>{cartItems.length}</span></li>
                   <li><IoNotifications /></li>
                   <li><HiBars3BottomLeft onClick={handleClick} /></li>
                   <li onClick={hadleLogout} className='logout' style={{color:"purple",paddingTop:"10px"}}>logout</li>

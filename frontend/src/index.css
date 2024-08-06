@@ -43,31 +43,27 @@ code {
 }
 .navbar
 {
-  width: 95%;
+  width: 98%;
   display: flex;
   height: 80px;
-  
   top:0px;
   left:30px;
   position: fixed;
   z-index: 1;
   background-color: white;
-  border-bottom-left-radius:10px ;
-  border-bottom-right-radius:10px ;
-  
 
 }
 .nav-logo
 {
    width: 30%;
    display: flex;
-   line-height: 80px;
+   line-height: 60px;
 }
 .nav-logo img
 {
  
   height: 45px;
-  margin: 20px auto;
+  margin: 10px auto;
 }
 .nav-logo1
 {
@@ -1414,13 +1410,12 @@ align-items: center;
 }
 .cart{
   width: 100%;
-  margin-top: 200px;
+  margin-top: 150px;
   display: flex;
  
 }
 .cart-items-dt{
   width: 70%;
-  
    padding: 20px;
    flex-direction: column;
 }
@@ -1483,6 +1478,8 @@ align-items: center;
   background-color: rgb(238, 236, 236);
   display: flex;
   flex-wrap: wrap;
+  margin-top: 20px;
+  
   
 }
 .cart-meenu1{
@@ -1528,4 +1525,64 @@ align-items: center;
   background-color: rgb(202, 41, 41) ;
   color: white;
   border: .7px solid rgb(202, 41, 41);
+}
+.cart-nav table {
+  
+  top:-15px;
+  left:450px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart-nav table tr th,td {
+ 
+ color: gray;
+ height: 40px;
+ width: 100px;
+ font-family: Georgia, 'Times New Roman', Times, serif;
+ font-style: italic;
+}
+.cart-nav table tr td select{
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart-nav table tr td button{
+  border: none;
+  outline: none;
+  cursor: pointer;
+  font-size: 18px;
+  background-color: rgb(207, 206, 206);
+  color:black;
+  width: 40px;
+}
+.qnty{
+  height: 30px;
+  background-color: white;
+  width: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+}
+.qnty-item{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.cartnumber{
+  top: -55px;
+  left: 20px;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  font-size: 10px;
+  padding: 5px;
+  padding-left: 7px;
+  padding-right: 7px;
+  position: relative;
 }
